@@ -1,0 +1,12 @@
+{
+  "name": "brave-native-pip",
+  "private": true,
+  "scripts": {
+    "build": "tsc --noEmit && esbuild src/content.ts src/background.ts --bundle --outdir=dist --target=chrome120"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.287",
+    "esbuild": "^0.24.0",
+    "typescript": "^5.6.0"
+  }
+}

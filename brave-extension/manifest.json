@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Native PiP for YouTube",
+  "version": "0.1.0",
+  "description": "Open YouTube videos in a native macOS floating player that stays above fullscreen apps.",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAstAsi9Gw4A28wWjPCqdt81DEL+9PWwi1GzzoQ9QYQynZ0NnfYl5TzTwFKvEoSGRw9ZQFKKd2xUxuo9O5egKD0AC8Ln7a+MvIqTPlLb4/TBlrq0S+zhrld2YjBp5hr8qG+TufYxZAMrQ/f+VsghUkUmixOPYzWmg1Ve8aG7Qn9n+D0QR7OGrRVwlCXStV5eGdDOm27+Gyo+KldEr6SzgljNFiC/4D4X7K7Yl4/Bvu4lk30SnKIpBeou7iESbD6GP2rff6XLZK01WNNu+jhXZLDH1xQtCtsq9BraaY4tI0pimzQFgD0Cr3x17vusxW7sLsH0j9n2Kzc/PAjwCoU9ii/wIDAQAB",
+  "permissions": ["nativeMessaging"],
+  "background": { "service_worker": "dist/background.js" },
+  "action": { "default_title": "Open in Native PiP" },
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["dist/content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
